@@ -9,7 +9,7 @@ public class UsingDriverUtilities {
 		WebDriverUtilitites winUtil = new WebDriverUtilitites();
 		
 		//Lanuch the browser
-		winUtil.launchTheBrowser();
+//		winUtil.launchTheBrowser();
 		
 		//Maximize the window
 		winUtil.maxTheWin();

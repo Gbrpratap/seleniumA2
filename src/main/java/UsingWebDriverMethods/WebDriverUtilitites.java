@@ -5,16 +5,34 @@ import java.util.Set;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class WebDriverUtilitites {
 	
 	public WebDriver driver = null;
 	
+	/*
 	//Launch the browser
 	public void launchTheBrowser() {
 		driver = new EdgeDriver();
 	}
+	*/
+	
+	   // Accept the browser name dynamically from your properties file
+    public void launchTheBrowser(String browser) {
+        if (browser.equalsIgnoreCase("chrome")) {
+            driver = new ChromeDriver();
+        } else if (browser.equalsIgnoreCase("edge")) {
+            driver = new EdgeDriver(); // This will launch Microsoft Edge
+        } else if (browser.equalsIgnoreCase("firefox")) {
+            driver = new FirefoxDriver();
+        } else {
+            System.out.println("Invalid browser name specified in properties file! Defaulting to Chrome.");
+            driver = new ChromeDriver();
+        }
+    }
 	
 	//Maximize the window
 	public void maxTheWin() {

@@ -29,7 +29,7 @@ public class UsingAbsolutePathForFlipkart {
 		WebDriverUtilitites winUtil = new WebDriverUtilitites();
 		
 		//Launch the browser
-		winUtil.launchTheBrowser();
+//		winUtil.launchTheBrowser();
 		
 		//Maximize the window
 		winUtil.maxTheWin();

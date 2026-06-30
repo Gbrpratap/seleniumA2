@@ -11,7 +11,7 @@ public class UsingAbsolutePath {
 		WebDriverUtilitites winUtil = new WebDriverUtilitites();
 		
 		//Launch the browser
-		winUtil.launchTheBrowser();
+//		winUtil.launchTheBrowser();
 		
 		//Maximize the window
 		winUtil.maxTheWin();
