@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" thread-count="2" parallel="tests">
+  <test  name="Test_chrome">
+  <parameter name="browsers" value="chrome"></parameter>
+    <classes>
+      <class name="suiteExecPackage.NavigateToFlipkart"/>
+      <class name="suiteExecPackage.NavigateToSites"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  <test name="Test_edge">
+  <!--
+  	<groups>
+	
+		<run>
+			<exclude name = "smoke"></exclude>
+			<include name ="reg"></include>
+		</run>
+	
+	</groups>
+	-->
+    <classes>
+    <parameter name="browsers" value="edge"></parameter>
+	    <class name="suiteExecPackage.NavigateToFlipkart"/>
+	    <class name="suiteExecPackage.NavigateToSites"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

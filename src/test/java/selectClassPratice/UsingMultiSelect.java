@@ -20,12 +20,12 @@ public static void main(String[] args) {
 		driver.manage().window().maximize();
 		
 		//implicit wait for the emelemts to load
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20)); //works only for findelement method
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		
 		//navigate to the application
 		driver.get("https://demoapps.qspiders.com/ui/dropdown/multiSelect?sublist=1");
 		
-		//identify the dropdown search webelement beside amazon search bar
+		//identify the dropdown 
 		WebElement dropdown = driver.findElement(By.id("select-multiple-native"));
 		
 		//select the options
@@ -36,7 +36,7 @@ public static void main(String[] args) {
 		sel.selectByValue("White Gold Plated Princess");
 		
 		//fecth all the options
-//		List<WebElement> listOfOptions = sel.getOptions();
+		List<WebElement> listOfOptions = sel.getOptions();
 		
 //		print all the options
 //		for(WebElement ele : listOfOptions) {

@@ -3,11 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="waitStatements.ExplicitWait">
+      <class name="com.selenium.searchcontext.FindElementsPracticeTest">
         <methods>
-          <include name="explicitWait"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="searchMobile"/>
         </methods>
-      </class> <!-- waitStatements.ExplicitWait -->
+      </class> <!-- com.selenium.searchcontext.FindElementsPracticeTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
