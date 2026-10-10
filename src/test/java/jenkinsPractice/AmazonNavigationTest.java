@@ -5,6 +5,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -17,7 +18,17 @@ public class AmazonNavigationTest {
     @Test
     public void verifyAmazonPageOpens() {
 
-        driver = new ChromeDriver();
+    	String browser = System.getProperty("browser", "edge");
+
+    	if (browser.equalsIgnoreCase("edge")) {
+    	    driver = new EdgeDriver();
+    	} else if (browser.equalsIgnoreCase("chrome")) {
+    	    driver = new ChromeDriver();
+    	} else {
+    	    throw new IllegalArgumentException(
+    	        "Unsupported browser: " + browser
+    	    );
+    	}
 
         driver.get("https://www.amazon.in/");
 
