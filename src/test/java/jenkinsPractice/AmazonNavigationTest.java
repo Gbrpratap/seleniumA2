@@ -22,18 +22,23 @@ public class AmazonNavigationTest {
     	String browser = System.getProperty("browser", "edge");
 
     	if (browser.equalsIgnoreCase("edge")) {
-    		EdgeOptions options = new EdgeOptions();
+
+    	    EdgeOptions options = new EdgeOptions();
     	    options.addArguments("--headless=new");
     	    options.addArguments("--disable-gpu");
-    	    driver = new EdgeDriver();
+
+    	    driver = new EdgeDriver(options);
+
     	} else if (browser.equalsIgnoreCase("chrome")) {
+
     	    driver = new ChromeDriver();
+
     	} else {
+
     	    throw new IllegalArgumentException(
     	        "Unsupported browser: " + browser
     	    );
     	}
-
         driver.get("https://www.amazon.in/");
 
         WebDriverWait wait = new WebDriverWait(
