@@ -6,6 +6,7 @@ import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -21,6 +22,9 @@ public class AmazonNavigationTest {
     	String browser = System.getProperty("browser", "edge");
 
     	if (browser.equalsIgnoreCase("edge")) {
+    		EdgeOptions options = new EdgeOptions();
+    	    options.addArguments("--headless=new");
+    	    options.addArguments("--disable-gpu");
     	    driver = new EdgeDriver();
     	} else if (browser.equalsIgnoreCase("chrome")) {
     	    driver = new ChromeDriver();
